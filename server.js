@@ -1,10 +1,14 @@
 const Location = require('./utils/Location')
 const Weather = require('./utils/Weather')
 
-location = 'Ottawa'
-findTemperature(location)
+location = ''
+findTemperature(location) 
 
 function findTemperature(data) {
+
+    if (!data.length) {
+       return console.log('Please enter a location')
+    }
     Location(data, (err, LocationRes) => {
         if (err) {
             console.log(err)
@@ -19,4 +23,5 @@ function findTemperature(data) {
         }
     })
 }
+
 
